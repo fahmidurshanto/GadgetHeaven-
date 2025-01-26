@@ -15,8 +15,8 @@ const Banner = () => {
           Shop Now
         </button>
       </div>
-      <div className=" border-2 border-white w-1/2 mx-auto absolute bottom-5 -translate-y-1/2 translate-x-1/2 rounded-lg hidden lg:block">
-        <img src={bannerImg} className="p-5 h-80 w-full rounded-lg" />
+      <div className=" border-2 border-white w-1/2 mx-auto absolute -bottom-28 translate-y-0.50.5 translate-x-1/2 rounded-4xl hidden lg:block">
+        <img src={bannerImg} className="p-5 h-80 w-full rounded-4xl" />
       </div>
     </>
   );

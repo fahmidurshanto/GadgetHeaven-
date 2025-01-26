@@ -2,6 +2,7 @@ import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
+
 const Navbar = () => {
     return (
         <div className="flex justify-between items-center p-10 bg-[#9538E2] text-white">
