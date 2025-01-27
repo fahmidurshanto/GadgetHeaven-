@@ -1,14 +1,16 @@
 import Banner from "../Banner/Banner";
 import Categories from "../Categories/Categories";
-import Products from "../Products/Products";
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className="flex items-center mt-36 relative">
+            <div>
+                    <h2 className="text-3xl font-bold mt-48 text-center">Explore Cutting-Edge Gadgets</h2>
+                
+            </div>
+            <div className="flex items-center mt-10 relative">
                 <Categories></Categories>
-                <Products></Products>
             </div>
         </div>
     );
