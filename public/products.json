@@ -1,0 +1,223 @@
+[
+    {
+      "product_id": 1,
+      "product_title": "Dell XPS 13",
+      "product_image": "https://example.com/dell-xps13.jpg",
+      "category": "laptops",
+      "price": 1200,
+      "description": "A sleek and powerful ultrabook with a 13.3-inch display.",
+      "Specification": ["Intel i7 11th Gen", "16GB RAM", "512GB SSD"],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 2,
+      "product_title": "iPhone 14 Pro",
+      "product_image": "https://example.com/iphone-14pro.jpg",
+      "category": "iphone",
+      "price": 999,
+      "description": "The latest iPhone with advanced camera features.",
+      "Specification": ["A16 Bionic chip", "128GB Storage", "5G Enabled"],
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": 3,
+      "product_title": "Logitech MX Master 3",
+      "product_image": "https://example.com/mx-master3.jpg",
+      "category": "accessories",
+      "price": 100,
+      "description": "A precision wireless mouse with ergonomic design.",
+      "Specification": ["Wireless", "USB-C Charging", "7 Customizable Buttons"],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 4,
+      "product_title": "MacBook Pro 16",
+      "product_image": "https://example.com/macbook-pro16.jpg",
+      "category": "macbook",
+      "price": 2500,
+      "description": "High-performance laptop for professionals.",
+      "Specification": ["M1 Max Chip", "32GB RAM", "1TB SSD"],
+      "availability": false,
+      "rating": 4.8
+    },
+    {
+      "product_id": 5,
+      "product_title": "Samsung Galaxy S23",
+      "product_image": "https://example.com/galaxy-s23.jpg",
+      "category": "phones",
+      "price": 850,
+      "description": "A premium smartphone with cutting-edge features.",
+      "Specification": ["Snapdragon 8 Gen 2", "120Hz AMOLED Display", "5000mAh Battery"],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": 6,
+      "product_title": "Apple Magic Keyboard",
+      "product_image": "https://example.com/magic-keyboard.jpg",
+      "category": "accessories",
+      "price": 200,
+      "description": "A compact and elegant wireless keyboard.",
+      "Specification": ["Rechargeable Battery", "Bluetooth Connectivity"],
+      "availability": true,
+      "rating": 4.4
+    },
+    {
+      "product_id": 7,
+      "product_title": "Lenovo ThinkPad X1 Carbon",
+      "product_image": "https://example.com/thinkpad-x1.jpg",
+      "category": "laptops",
+      "price": 1400,
+      "description": "A lightweight business laptop with great durability.",
+      "Specification": ["Intel i7 12th Gen", "16GB RAM", "1TB SSD"],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 8,
+      "product_title": "iPhone SE (2023)",
+      "product_image": "https://example.com/iphone-se2023.jpg",
+      "category": "iphone",
+      "price": 429,
+      "description": "An affordable iPhone with compact design.",
+      "Specification": ["A15 Bionic chip", "64GB Storage", "4.7-inch Retina HD Display"],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": 9,
+      "product_title": "Anker PowerCore 20,000mAh",
+      "product_image": "https://example.com/anker-powercore.jpg",
+      "category": "accessories",
+      "price": 50,
+      "description": "A high-capacity portable power bank.",
+      "Specification": ["20,000mAh", "Dual USB Ports", "Fast Charging"],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 10,
+      "product_title": "MacBook Air M2",
+      "product_image": "https://example.com/macbook-air-m2.jpg",
+      "category": "macbook",
+      "price": 1200,
+      "description": "A lightweight and efficient MacBook for everyday use.",
+      "Specification": ["M2 Chip", "8GB RAM", "256GB SSD"],
+      "availability": false,
+      "rating": 4.7
+    },
+    {
+      "product_id": 11,
+      "product_title": "OnePlus 11",
+      "product_image": "https://example.com/oneplus-11.jpg",
+      "category": "phones",
+      "price": 799,
+      "description": "A flagship killer with premium specs.",
+      "Specification": ["Snapdragon 8 Gen 2", "120Hz AMOLED Display", "80W Fast Charging"],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": 12,
+      "product_title": "Razer DeathAdder V2",
+      "product_image": "https://example.com/deathadder-v2.jpg",
+      "category": "accessories",
+      "price": 70,
+      "description": "A gaming mouse designed for precision.",
+      "Specification": ["20,000 DPI Optical Sensor", "RGB Lighting"],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": 13,
+      "product_title": "HP Spectre x360",
+      "product_image": "https://example.com/spectre-x360.jpg",
+      "category": "laptops",
+      "price": 1300,
+      "description": "A convertible laptop with stunning design.",
+      "Specification": ["Intel i7 12th Gen", "16GB RAM", "1TB SSD"],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 14,
+      "product_title": "iPhone 13 Mini",
+      "product_image": "https://example.com/iphone-13mini.jpg",
+      "category": "iphone",
+      "price": 699,
+      "description": "Compact and feature-packed smartphone.",
+      "Specification": ["A15 Bionic chip", "5.4-inch OLED Display", "Dual Cameras"],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": 15,
+      "product_title": "Samsung Galaxy Buds Pro",
+      "product_image": "https://example.com/galaxy-buds-pro.jpg",
+      "category": "accessories",
+      "price": 150,
+      "description": "Premium wireless earbuds with active noise cancellation.",
+      "Specification": ["ANC", "Bluetooth 5.2", "IPX7 Water Resistance"],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": 16,
+      "product_title": "MacBook Pro 14",
+      "product_image": "https://example.com/macbook-pro14.jpg",
+      "category": "macbook",
+      "price": 2200,
+      "description": "Compact and powerful MacBook for professionals.",
+      "Specification": ["M1 Pro Chip", "16GB RAM", "512GB SSD"],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 17,
+      "product_title": "Google Pixel 7 Pro",
+      "product_image": "https://example.com/pixel-7pro.jpg",
+      "category": "phones",
+      "price": 899,
+      "description": "Google's flagship phone with advanced AI features.",
+      "Specification": ["Google Tensor G2", "120Hz OLED", "5000mAh Battery"],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 18,
+      "product_title": "SteelSeries Arctis 7",
+      "product_image": "https://example.com/arctis-7.jpg",
+      "category": "accessories",
+      "price": 180,
+      "description": "A wireless gaming headset with superior audio quality.",
+      "Specification": ["Lossless Wireless", "24-Hour Battery Life", "DTS Surround Sound"],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": 19,
+      "product_title": "Asus ROG Zephyrus G14",
+      "product_image": "https://example.com/rog-zephyrus-g14.jpg",
+      "category": "laptops",
+      "price": 1500,
+      "description": "A powerful gaming laptop with stylish design.",
+      "Specification": ["AMD Ryzen 9", "RTX 4060", "1TB SSD"],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 20,
+      "product_title": "iPhone 12",
+      "product_image": "https://example.com/iphone-12.jpg",
+      "category": "iphone",
+      "price": 599,
+      "description": "A solid iPhone with great performance and camera quality.",
+      "Specification": ["A14 Bionic chip", "6.1-inch OLED Display", "Dual Cameras"],
+      "availability": true,
+      "rating": 4.5
+    }
+  ]
+  
