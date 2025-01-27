@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className="flex items-center">
+            <div className="flex items-center mt-36 relative">
                 <Categories></Categories>
                 <Products></Products>
             </div>
