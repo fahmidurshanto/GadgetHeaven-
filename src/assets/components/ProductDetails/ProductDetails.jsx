@@ -64,10 +64,10 @@ const ProductDetails = () => {
             </div>
 
             <div className="flex items-center gap-4">
-            <button className="btn bg-[#9538E2]">
-              Add to Cart <FaCartArrowDown />
+            <button className="btn bg-[#9538E2] text-white">
+              Add to Cart <FaCartArrowDown className="text-white" />
             </button>
-            <button className="btn bg-[#9538E2]"><FaRegHeart/></button>
+            <button className="btn bg-[#9538E2]"><FaRegHeart className="text-white"/></button>
             </div>
           </div>
         </div>
