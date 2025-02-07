@@ -1,85 +1,98 @@
-import  { useState } from 'react';
+import { useState } from 'react';
+import { RxCross1 } from 'react-icons/rx';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css'; // Import the default styles
 
-const DashboardPage = () => {
-  const [activeTab, setActiveTab] = useState('cart');
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: 'Gadget A', image: 'imageA.jpg', price: 100 },
-    { id: 2, name: 'Gadget B', image: 'imageB.jpg', price: 200 },
-    { id: 3, name: 'Gadget C', image: 'imageC.jpg', price: 150 },
-  ]);
-  const [wishListItems, setWishListItems] = useState([
-    { id: 4, name: 'Gadget D', image: 'imageD.jpg', price: 120 },
-    { id: 5, name: 'Gadget E', image: 'imageE.jpg', price: 80 },
-  ]);
+const Dashboard = () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const wishlist = JSON.parse(localStorage.getItem("wishlist"));
+  console.log("cart", cart, "wishlist", wishlist);
 
-  const handleSortByPrice = () => {
-    const sortedItems = [...cartItems].sort((a, b) => b.price - a.price);
-    setCartItems(sortedItems);
+  // State to manage sorted cart
+  const [sortedCart, setSortedCart] = useState(cart);
+
+  // Calculate the total cost of items in the cart
+  const totalCost = sortedCart.reduce((total, item) => total + parseFloat(item.price || 0), 0);
+
+  // Function to sort cart by price in descending order
+  const sortCartByPrice = () => {
+    const sorted = [...cart].sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+    setSortedCart(sorted);
   };
 
-  const totalCartPrice = cartItems.reduce((total, item) => total + item.price, 0);
-
   return (
-    <div className="dashboard-page p-4">
-      <div className="tabs flex space-x-4 mb-4">
-        <button
-          className={`tab-button ${activeTab === 'cart' ? 'font-bold' : ''}`}
-          onClick={() => setActiveTab('cart')}
-        >
-          Cart
-        </button>
-        <button
-          className={`tab-button ${activeTab === 'wishlist' ? 'font-bold' : ''}`}
-          onClick={() => setActiveTab('wishlist')}
-        >
-          Wish List
-        </button>
+    <div className='bg-white'>
+      <div className="bg-[#9538E2] text-center w-full space-y-1.5">
+        <h1 className="text-4xl font-bold">Dashboard</h1>
+        <p className="text-gray-300">
+          Your central hub for insights, trends, and control—everything you need, all in one place.
+        </p>
       </div>
 
-      {activeTab === 'cart' && (
-        <div className="cart-tab">
-          <h2 className="text-lg font-semibold mb-2">Cart Items</h2>
-          <button
-            className="sort-button bg-blue-500 text-white px-3 py-1 rounded mb-4"
-            onClick={handleSortByPrice}
-          >
-            Sort by Price
-          </button>
-          <ul className="cart-items space-y-2">
-            {cartItems.map((item) => (
-              <li key={item.id} className="item-card flex items-center space-x-4 p-2 border rounded">
-                <img src={item.image} alt={item.name} className="w-16 h-16 object-cover" />
-                <div>
-                  <h3 className="text-md font-medium">{item.name}</h3>
-                  <p className="text-sm text-gray-500">Price: ${item.price}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <div className="total-price mt-4 text-md font-medium">
-            Total Price: ${totalCartPrice}
-          </div>
-        </div>
-      )}
+      <Tabs className='bg-white'>
+        <TabList className="flex justify-center bg-[#9538E2] items-center gap-5 py-11">
+          <Tab className="bg-[#9538E2] rounded-full btn btn-outline hover:bg-white hover:text-black cursor-pointer">Cart</Tab>
+          <Tab className="bg-[#9538E2] rounded-full btn btn-outline hover:bg-white hover:text-black cursor-pointer">Wishlist</Tab>
+        </TabList>
 
-      {activeTab === 'wishlist' && (
-        <div className="wishlist-tab">
-          <h2 className="text-lg font-semibold mb-2">Wish List Items</h2>
-          <ul className="wishlist-items space-y-2">
-            {wishListItems.map((item) => (
-              <li key={item.id} className="item-card flex items-center space-x-4 p-2 border rounded">
-                <img src={item.image} alt={item.name} className="w-16 h-16 object-cover" />
-                <div>
-                  <h3 className="text-md font-medium">{item.name}</h3>
-                  <p className="text-sm text-gray-500">Price: ${item.price}</p>
+        <TabPanel>
+          <div className='text-black p-5'>
+           <div className='flex justify-between items-center p-5 bg-white text-black'>
+           <h2 className='text-3xl font-bold'>Cart</h2>
+            <h2 className='text-2xl font-semibold'>Total Cost: ${totalCost.toFixed(2)}</h2>
+            <button
+              className='btn btn-outline btn-secondary'
+              onClick={sortCartByPrice} // Add onClick handler
+            >
+              Sort by Price
+            </button>
+           </div>
+            {sortedCart.map((item, index) => (
+              <div key={index} className="flex justify-between items-center p-5 my-5 bg-white text-black shadow-2xl gap-5">
+                <img src={item?.product_image}  className='w-1/6' />
+                <div className='flex flex-col justify-around items-center gap-5'>
+                  <h3 className="text-xl font-semibold">{item?.product_title}</h3>
+                  <p className="text-gray-500">Price: ${item?.price}</p>
+                  <p>{item?.description}</p>
+                  <button className='btn btn-outline border-green-500'>{item.availability ? "In Stock": "Out of stock"}</button>
                 </div>
-              </li>
+                  <p><span className='font-bold'>Rating:</span> {item?.rating}</p>
+                <div className="text-red-500 hover:bg-gray-400 hover:text-white  p-2 cursor-pointer rounded-full">
+                <RxCross1 />
+                </div>
+                
+              </div>
             ))}
-          </ul>
-        </div>
-      )}
+          </div>
+        </TabPanel>
+
+        <TabPanel>
+          {/*  Items card will contain gadget name, image, price, and other info that you
+want to show
+ */}
+          <div className='text-black p-5'>
+            <h2 className='text-3xl font-bold'>Wishlist</h2>
+            {wishlist.map((item, index) => (
+                <div key={index} className="flex justify-between items-center p-5 my-5 bg-white text-black shadow-2xl gap-5">
+                <img src={item?.product_image}  className='w-1/6' />
+                <div className='flex flex-col justify-around items-center gap-5'>
+                  <h3 className="text-xl font-semibold">{item?.product_title}</h3>
+                  <p className="text-gray-500">Price: ${item?.price}</p>
+                  <p>{item?.description}</p>
+                  <button className='btn btn-outline border-green-500'>{item.availability ? "In Stock": "Out of stock"}</button>
+                </div>
+                  <p><span className='font-bold'>Rating:</span> {item?.rating}</p>
+                <div className="text-red-500 hover:bg-gray-400 hover:text-white  p-2 cursor-pointer rounded-full">
+                <RxCross1 />
+                </div>
+                
+              </div>
+            ))}
+          </div>
+        </TabPanel>
+      </Tabs>
     </div>
   );
 };
 
-export default DashboardPage;
+export default Dashboard;

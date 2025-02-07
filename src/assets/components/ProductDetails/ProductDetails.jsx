@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"; // Import useEffect
+import { useState, useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Rating from "react-rating";
 import { FaCartArrowDown, FaRegHeart } from "react-icons/fa";
@@ -8,11 +8,14 @@ const ProductDetails = () => {
   const products = useLoaderData();
   const productId = useParams();
   const [cart, setCart] = useState([]); // State to hold cart items
+  const [wishlist, setWishlist] = useState([]); // State to hold wishlist items
 
-  // Initialize cart from localStorage on component mount
+  // Initialize cart and wishlist from localStorage on component mount
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const savedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
     setCart(savedCart);
+    setWishlist(savedWishlist);
   }, []);
 
   const product = products.find(
@@ -33,13 +36,30 @@ const ProductDetails = () => {
       setCart(updatedCart);
       localStorage.setItem("cart", JSON.stringify(updatedCart)); // Save to localStorage
       toast("Product added to cart:", product);
+      console.log(product);
     } else {
       toast("Product is already in the cart", {
         type: "error",
       });
     }
   };
-
+  const handleAddToWishlist = () => {
+    // Check if the product is already in the wishlist
+    const isProductInWishlist = wishlist.some((item) => item.product_id === product.product_id);
+  
+    if (!isProductInWishlist) {
+      // Add the product object to the wishlist
+      const updatedWishlist = [...wishlist, product];
+      setWishlist(updatedWishlist);
+      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist)); // Save to localStorage
+      toast("Product added to wishlist:", product);
+      console.log(product);
+    } else {
+      toast("Product is already in the wishlist", {
+        type: "error",
+      });
+    }
+  };
   return (
     <div className="flex flex-col justify-center items-center text-white relative space-y-1.5 text-center mb-72">
       {/* header */}
@@ -86,10 +106,16 @@ const ProductDetails = () => {
             </div>
 
             <div className="flex items-center gap-4">
+              {/* cart icon */}
               <button className="btn bg-[#9538E2] text-white" onClick={handleAddToCart}>
                 Add to Cart <FaCartArrowDown className="text-white" />
               </button>
-              <button className="btn bg-[#9538E2]">
+              {/* heart icon */}
+              <button
+                className="btn bg-[#9538E2]"
+                onClick={handleAddToWishlist}
+                disabled={wishlist.includes(product.product_id)} // Disable if already in wishlist
+              >
                 <FaRegHeart className="text-white" />
               </button>
               <ToastContainer></ToastContainer>
