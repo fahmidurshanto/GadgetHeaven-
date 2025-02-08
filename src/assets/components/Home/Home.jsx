@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
 import Categories from "../Categories/Categories";
 
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>Home | GadgetHeaven</title>
+            </Helmet>
             <Banner></Banner>
             <div>
                     <h2 className="text-3xl font-bold mt-48 text-center">Explore Cutting-Edge Gadgets</h2>

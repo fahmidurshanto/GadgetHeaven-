@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "title": "Top 5 Laptops for 2023",
+      "excerpt": "Discover the best laptops of 2023 for gaming, productivity, and everyday use.",
+      "category": "Laptops",
+      "date": "October 10, 2023"
+    },
+    {
+      "id": 2,
+      "title": "How to Choose the Perfect Camera for Your Needs",
+      "excerpt": "A comprehensive guide to picking the ideal camera for photography and videography.",
+      "category": "Cameras",
+      "date": "October 5, 2023"
+    },
+    {
+      "id": 3,
+      "title": "Must-Have Electronic Accessories for Your Smartphone",
+      "excerpt": "Enhance your smartphone experience with these essential accessories.",
+      "category": "Electronic Accessories",
+      "date": "September 28, 2023"
+    },
+    {
+      "id": 4,
+      "title": "The Future of Smartphones: What to Expect in 2024",
+      "excerpt": "A sneak peek into the latest trends and innovations in the smartphone industry.",
+      "category": "Smartphones",
+      "date": "September 20, 2023"
+    },
+    {
+      "id": 5,
+      "title": "Building the Ultimate Gaming PC in 2023",
+      "excerpt": "Learn how to build a high-performance gaming PC with the latest components.",
+      "category": "Computers",
+      "date": "September 15, 2023"
+    }
+  ]
+  

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Product = ({product}) => {
 
-    const {product_id, product_title, product_image, category, price, description, Specification, rating} = product;
+    const {product_id, product_title, product_image,  price} = product;
     return (
         <div className="p-4 shadow-md rounded-2xl">
             <img className="h-44 rounded-xl shadow-md w-full" src={product_image} alt={product_title} />

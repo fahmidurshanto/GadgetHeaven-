@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import Rating from "react-rating";
 import { FaCartArrowDown, FaRegHeart } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const ProductDetails = () => {
   const products = useLoaderData();
@@ -43,10 +44,11 @@ const ProductDetails = () => {
       });
     }
   };
+
   const handleAddToWishlist = () => {
     // Check if the product is already in the wishlist
     const isProductInWishlist = wishlist.some((item) => item.product_id === product.product_id);
-  
+
     if (!isProductInWishlist) {
       // Add the product object to the wishlist
       const updatedWishlist = [...wishlist, product];
@@ -60,9 +62,13 @@ const ProductDetails = () => {
       });
     }
   };
+
   return (
     <div className="flex flex-col justify-center items-center text-white relative space-y-1.5 text-center mb-72">
       {/* header */}
+      <Helmet>
+        <title>{product?.product_title}</title>
+      </Helmet>
       <div className="bg-[#9538E2] text-center w-full pb-52">
         <h1 className="text-4xl font-bold">Product details</h1>
         <p className="text-gray-300">
@@ -114,7 +120,7 @@ const ProductDetails = () => {
               <button
                 className="btn bg-[#9538E2]"
                 onClick={handleAddToWishlist}
-                disabled={wishlist.includes(product.product_id)} // Disable if already in wishlist
+                disabled={wishlist.some((item) => item.product_id === product.product_id)} 
               >
                 <FaRegHeart className="text-white" />
               </button>
